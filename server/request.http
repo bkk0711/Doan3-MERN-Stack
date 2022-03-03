@@ -1,0 +1,264 @@
+GET http://localhost:5000
+
+###### AUTH #######
+
+GET http://localhost:5000/api/auth/check-admin
+
+
+#### AUTH - REGISTER 
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    
+    "username": "aSSSSSS",
+    "password": "0944487635",
+    "email": "admin@ithub.vn",
+    "fullname": "Bùi Khôi"
+
+}
+
+#### AUTH - Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "0944487635"
+}
+
+####
+GET http://localhost:5000/api/auth/thongtin
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDE5MzA3Nzl9.mXxpcRPCJVkFNtLVzS70Ni_jxs7y0-G6W9kfi6GHKnw
+
+{
+    "fullname": "KHOI BUI",
+     "balance" : 1000, 
+    "email": "asdasd@gmail.com",
+    "verified" : true
+
+}
+
+#####
+DELETE  http://localhost:5000/api/auth/61c2ade696a9ef6f2d79eddf
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+{
+    "title": "Bài viết só 5",
+    "description": "sjjadkjsadkas kajsdklasjd ",
+    "admit": "OK"
+}
+
+####
+
+GET http://localhost:5000/api/posts/?page=2&size=all
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDE4Y2YxN2QxOTk0M2YwOTdmZmUiLCJpYXQiOjE2NDA2MDQ0MjR9.Bcj2gP29qlh4cQ9N-FY1dla1vUWVA9gPETlGAe0SfcY
+
+{
+    "skip": 10,
+    "limit": 100
+}
+####
+GET http://localhost:5000/api/posts/61c58f96008662e3869b3f1a6
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWI1YWI2OTkwNWY2NDg0ZjExMzQ2NDciLCJpYXQiOjE2MzkyOTU4NDl9.XjzbO0jjcCeZuJuGgbE3UNeYWvbu8NEjSB4JQF7cGng
+
+
+####
+GET http://localhost:5000/api/posts/all
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+###
+PUT http://localhost:5000/api/posts/61c58f96008662e3869b3f1a
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+{
+    "title": "Test EDIT BÀI VIET",
+    "description": "sjjadkjsadkas kajsdklasjd ",
+    "status": "OK"
+}
+
+
+###
+DELETE http://localhost:5000/api/post/61b5b40d85fc622fcaa71ea8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWI1YWI2OTkwNWY2NDg0ZjExMzQ2NDciLCJpYXQiOjE2MzkzMTY3MjN9.9zJcs285n2SLQ84kyLkfb9-V4aVlclF0poXwUCIHbE0
+
+
+#### CATEGORY
+POST http://localhost:5000/api/categories
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+{
+     "cname": "PDF",
+    "description": ".PDF FILE",
+    "type_product": "DOCUMENT"
+}
+
+
+### EDIT CATEGORY
+PUT http://localhost:5000/api/categories/61c214534a8405a75ce92955
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+{
+    "cname": "Photo Raw",
+    "description": "Ảnh RAW",
+    "type_product": "MEDIA"
+}
+
+### DELETE CATEGORY
+DELETE  http://localhost:5000/api/categories/61c214534a8405a75ce92955
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+### GET PUBLIC CATEGORY
+GET  http://localhost:5000/api/categories/
+
+### GET LIST CATEGORY
+GET  http://localhost:5000/api/categories/list
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+### GET ONE CATEGORY
+GET  http://localhost:5000/api/categories/61c2afd9269aca458a6aa7ad
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+####
+POST http://localhost:5000/api/product
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDAxODU2NTl9.4wF2eIerpnqe-g4uO83nmK4oSX7uydHr4o9sDaOwDYg
+
+{
+    "title": "CODE ABC APP V6",
+    "description" : "Mo ta code nha ae",
+    "type_product": "CODE", 
+    "category": "61c2afd9269aca458a6aa7ad", 
+    "price": "100000", 
+    "discount": "", 
+    "urlfile": "http://localhost.com/code.zip", 
+    "tags": [
+        "Java",
+        "XML",
+        "SQLite"
+    ]
+}
+
+#### EDIT PRODUCT
+PUT http://localhost:5000/api/product/61c342dc17e81a300fb3c6e2
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDAxODU2NTl9.4wF2eIerpnqe-g4uO83nmK4oSX7uydHr4o9sDaOwDYg
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyYWRlNjk2YTllZjZmMmQ3OWVkZGYiLCJpYXQiOjE2NDAxODY4OTV9.JmAMtURIR4N8P0yp0A-tePTK2cuSIxhMR1047vBWEa0
+
+{
+    "title": "CODE ABC APP V3",
+    "description" : "Mo ta code nha ae",
+    "type_product": "CODE", 
+    "category": "61c2afd9269aca458a6aa7ad", 
+    "price": "700000", 
+    "discount": "", 
+    "urlfile": "http://localhost.com/code.zip", 
+    "tags": [
+        "Java",
+        "XML",
+        "SQLite"
+    ]
+}
+
+#### EDIT PRODUCT
+PUT http://localhost:5000/api/product/status_change/61c322075c4db3236ea6d30d
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDAxODU2NTl9.4wF2eIerpnqe-g4uO83nmK4oSX7uydHr4o9sDaOwDYg
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyYWRlNjk2YTllZjZmMmQ3OWVkZGYiLCJpYXQiOjE2NDAxODY4OTV9.JmAMtURIR4N8P0yp0A-tePTK2cuSIxhMR1047vBWEa0
+
+{
+    "status": "OK"
+    
+}
+
+#### EDIT PRODUCT
+DELETE http://localhost:5000/api/product/61c34718ff89fc883aaf710e
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDAxODU2NTl9.4wF2eIerpnqe-g4uO83nmK4oSX7uydHr4o9sDaOwDYg
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyYWRlNjk2YTllZjZmMmQ3OWVkZGYiLCJpYXQiOjE2NDAxODY4OTV9.JmAMtURIR4N8P0yp0A-tePTK2cuSIxhMR1047vBWEa0
+
+
+
+##### GET ALL
+GET http://localhost:5000/api/product/undefined
+
+
+##### GET ALL
+GET http://localhost:5000/api/product/list
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDAxODU2NTl9.4wF2eIerpnqe-g4uO83nmK4oSX7uydHr4o9sDaOwDYg
+
+
+####
+GET http://localhost:5000/api/cart/61c322075c4db3236ea6d30d
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+#####
+GET http://localhost:5000/api/cart/list
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+######
+DELETE http://localhost:5000/api/cart/61c34bb6b6dd3ea2793a9a4c
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+#####
+DELETE http://localhost:5000/api/cart/all
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+######
+GET http://localhost:5000/api/checkout/61c34bb6b6dd3ea2793a9a4c
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+#######
+GET http://localhost:5000/api/product/list
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQyOWMwOWEwMGEyMTM4YWRmY2U3NWIiLCJpYXQiOjE2NDExOTI0NTd9.gCBzYG_u5QehMhtYOAXgGnNwFLC9ecGqHeWiqj9QMps
+
+
+### \
+POST http://localhost:5000/api/auth/withdraw
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDIxODAwNTN9.luIDvbNkwm9rhB7j1eaXLYARjA1yFJP1uv1ISdxlBlI
+
+{
+    "action": "withdraw",
+    "value": "50000"
+
+}
+
+
+###
+GET http://localhost:5000/api/auth/logs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDIxODAwNTN9.luIDvbNkwm9rhB7j1eaXLYARjA1yFJP1uv1ISdxlBlI
+
+
+####
+DELETE http://localhost:5000/api/auth/bank/61e386638a2765d12e9b17e1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWMyMDM3OWYxN2QxOTk0M2YwOTgwMDgiLCJpYXQiOjE2NDIxODAwNTN9.luIDvbNkwm9rhB7j1eaXLYARjA1yFJP1uv1ISdxlBlI
+
+# "bank": "VietComBank",
+    # "name_bank": "Bui Khoi Khoi",
+    # "stk_bank": "0123456789",
+    # "chi_nhanh": "dfdfdfdf"
